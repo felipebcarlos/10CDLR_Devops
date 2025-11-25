@@ -19,6 +19,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<sonar.organization>felipebcarlos</sonar.organization>
+		<sonar.projectKey>chavo2felipebcarlos</sonar.projectKey>
   		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
