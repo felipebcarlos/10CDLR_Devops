@@ -18,7 +18,8 @@
 
 	<properties>
 		<java.version>11</java.version>
-		<sonar.organization>devopsmbalearning</sonar.organization>
+		<sonar.organization>chavo2felipebcarlos</sonar.organization>
+		<sonar.projectKey>felipebcarlos_10CDLR_Devops</sonar.projectKey>
   		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 	</properties>
 
