@@ -109,3 +109,23 @@ jobs:
         run: |
           echo "Deploy STG"
     
+  deploy-azure: 
+   needs: build  
+   name: Deploy-azure 
+   runs-on: ubuntu-latest 
+   if: github.ref == 'refs/heads/main'    
+   environment: 
+     name: AZURE-PRO        
+     url: https://devops-fiap-braga-fbg8g7dheqceagan.canadacentral-01.azurewebsites.net/ 
+   steps: 
+      - name: Download JAR 
+        uses: actions/download-artifact@v3 
+        with: 
+          name: artifact 
+          path: target/  
+      - name: DeployAzure   
+        uses: azure/webapps-deploy@v2 
+        with: 
+           app-name: Devops-FIAP-Braga 
+           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }} 
+           package: '${{ github.workspace }}/target/*.jar'
