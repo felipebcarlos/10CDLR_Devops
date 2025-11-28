@@ -119,7 +119,7 @@ jobs:
      url: https://devops-fiap-braga-fbg8g7dheqceagan.canadacentral-01.azurewebsites.net/ 
    steps: 
       - name: Download JAR 
-        uses: actions/download-artifact@v3 
+        uses: actions/download-artifact@v4
         with: 
           name: artifact 
           path: target/  
