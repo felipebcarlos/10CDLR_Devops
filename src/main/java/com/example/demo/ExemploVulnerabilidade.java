@@ -21,18 +21,18 @@ public class ExemploVulnerabilidade {
             statement.setString(1, userInput);
             ResultSet resultSet = statement.executeQuery();
 
-         String userInput = args[0]; // Supondo que userInput seja a entrada do usuário
+         // --> TRECHO VULNERÁVEL A SER REMOVIDO/CORRIGIDO <--
+         String userInput = args[0]; // Supondo que userInput seja a entrada do usuário (DUPLICADO)
         Statement statement = connection.createStatement();
         // Consulta SQL vulnerável à injeção
         String query = "SELECT * FROM usuarios WHERE nome = '" + userInput + "'";
         // Execução da consulta
         ResultSet resultSet1 = statement.executeQuery(query);
+         // ----------------------------------------------------
  
-            // Processamento dos resultados
+            // Processamento dos resultados (dessa parte em diante o código já usa a consulta segura)
             while (resultSet.next()) {
-                String nome = resultSet.getString("nome");
-                String email = resultSet.getString("email");
-                System.out.println("Nome: " + nome + ", Email: " + email);
+                // ...
             }
         } catch (SQLException e) {
             e.printStackTrace();
