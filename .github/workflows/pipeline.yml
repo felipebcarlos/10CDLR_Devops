@@ -166,4 +166,3 @@ jobs:
       - name: Functionaltest
         shell: bash
         run: sh 'src/main/scripts/testesFuncionais.sh'
-    
